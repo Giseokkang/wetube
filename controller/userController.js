@@ -7,6 +7,7 @@ export const getJoin = (req, res) => {
 export const postJoin = (req, res) => {
   console.log(req.body);
   const {
+    // eslint-disable-next-line no-unused-vars
     body: { name, email, password, password2 }
   } = req;
   if (password !== password2) {
@@ -26,7 +27,7 @@ export const postLogin = (req, res) => {
 };
 
 export const logout = (req, res) => {
-  //To Do : Process Log  OUt
+  // To Do : Process Log  OUt
   res.redirect(routes.home);
 };
 
