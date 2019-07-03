@@ -1,4 +1,11 @@
+@import "./main.scss";
 @import "/config/_variables.scss";
-body {
-  background-color: $sexyColor;
-}
+@import "./reset.scss";
+@import "./parials/header.scss";
+@import "./parials/footer.scss";
+@import "./pages/join.scss";
+@import "./parials/socialLogin.scss";
+@import "./pages/upload.scss";
+@import "./parials/videoBlock.scss";
+@import "./home.scss";
+@import "./editVideo.scss";

@@ -1,0 +1,36 @@
+.form-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    input {
+      padding: 10px 20px;
+      width: 300px;
+      border-radius: 5px;
+      border: 1px solid black;
+      opacity: 0.5;
+      font-size: 15px;
+    }
+    input:not(:last-child) {
+      margin-top: 25px;
+    }
+    input:last-child {
+      margin-top: 15px;
+      background-color: #2ecc71;
+      color: white;
+      opacity: 0.9;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    input:hover,
+    input:active,
+    input:focus {
+      opacity: 1;
+    }
+  }
+}

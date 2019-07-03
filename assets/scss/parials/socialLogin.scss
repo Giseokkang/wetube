@@ -1,0 +1,27 @@
+.social-login {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  align-items: center;
+  button {
+    display: flex;
+    padding: 10px 20px;
+    width: 300px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+    &:first-child {
+      background-color: #464646;
+    }
+    &:nth-child(2) {
+      background-color: #3b5897;
+    }
+    i {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+  }
+}

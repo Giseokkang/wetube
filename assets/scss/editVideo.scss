@@ -1,0 +1,71 @@
+.editVideo {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 60px;
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+    input:first-child {
+      height: 25px;
+      width: 40%;
+      border: 1px solid black;
+      border-radius: 5px;
+      font-size: 15px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      opacity: 0.7;
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
+    }
+    textarea {
+      width: 400px;
+      height: 400px;
+      margin-top: 10px;
+      outline: none;
+      font-size: 16px;
+      opacity: 0.7;
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
+    }
+    input[type="submit"] {
+      margin: 25px 0;
+      padding: 10px 20px;
+      border: 1px solid black;
+      cursor: pointer;
+      width: 127px;
+      border-radius: 5px;
+      font-size: 15px;
+      background-color: #2ecc71;
+      color: white;
+      text-align: center;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.form-container__link--delete {
+  padding: 10px 20px;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: #ff0000;
+  color: white;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
+}
