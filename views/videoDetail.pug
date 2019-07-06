@@ -2,7 +2,7 @@ extends layouts/main
 
 block content
     .video__player
-        video(src=`/${video.fileUrl}`)
+        video(src=`/${video.fileUrl}`,autoplay=true, controls=true)
     .video__info
         a(href=routes.editVideo(video.id)) Edit video
         h5.video__title=video.title
