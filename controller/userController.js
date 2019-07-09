@@ -43,7 +43,6 @@ export const githubLoginCallback = async (_, __, profile, cb) => {
   const {
     _json: { id, avatar_url: avatarUrl, name, email }
   } = profile;
-  console.log(profile);
   try {
     const user = await User.findOne({ email });
     if (user) {
@@ -73,7 +72,6 @@ export const facebookLoginCallback = async (_, __, profile, cb) => {
   const {
     _json: { id, name, email }
   } = profile;
-  console.log(profile, cb);
   try {
     const user = await User.findOne({ email });
     if (user) {
@@ -118,7 +116,7 @@ export const userDetail = async (req, res) => {
     params: { id }
   } = req;
   try {
-    const user = await User.findById(id);
+    const user = await User.findById(id).populate("videos");
     res.render("userDetail", { pageTitle: "User detail", user });
   } catch (error) {
     console.log(error);

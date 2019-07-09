@@ -41,7 +41,7 @@ const routes = {
   me: ME,
   userDetail: id => {
     if (id) {
-      return `/users/${id};`;
+      return `/users/${id}`;
     }
     return USER_DETAIL;
   },
