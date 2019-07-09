@@ -1,0 +1,40 @@
+.user-profile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  .user-profile__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 25px;
+    }
+    .profile__username {
+      font-size: 20px;
+      letter-spacing: 2.5px;
+    }
+  }
+  .user-profile__btns {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    a {
+      margin-bottom: 10px;
+    }
+    button {
+      cursor: pointer;
+      width: 200px;
+      padding: 10px 10px;
+      background-color: #3498db;
+      font-size: 14px;
+      border-radius: 10px;
+      color: white;
+      outline: none;
+    }
+  }
+}
