@@ -27,8 +27,15 @@
 
     .videoPlayer__column {
       display: flex;
-      .volumnBtn {
+      .volumeBar {
+        margin-right: 20px;
+        transform: rotate(270deg) translateY(-10px);
+        position: absolute;
+        top: -80px;
+      }
+      .volumeBtn {
         margin-left: 20px;
+        position: relative;
       }
       .videoPlayer__column__time {
         display: flex;
