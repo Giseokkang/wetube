@@ -9,8 +9,8 @@ const handleVideoData = event => {
   const { data: videoFile } = event;
   const link = document.createElement("a");
   link.href = URL.createObjectURL(videoFile);
-  link.download = "recoreded.webm";
-  recordBtn.appendChild(link);
+  link.download = "recorded.webm";
+  document.body.appendChild(link);
   link.click();
 };
 
