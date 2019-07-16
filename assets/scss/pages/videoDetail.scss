@@ -45,4 +45,54 @@
       font-weight: 800;
     }
   }
+  .video__comments {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .add__comment {
+      padding: 20px 10px;
+      margin-top: 30px;
+      width: 80%;
+      border: 2px solid #616061;
+      border-radius: 10px;
+      height: auto;
+      max-height: 100px;
+      font-size: 15px;
+      line-height: 1.2rem;
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+      }
+      input {
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
+      }
+    }
+    .video__comments-list {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+      margin-top: 30px;
+      li {
+        padding: 20px 10px;
+      }
+    }
+  }
+}
+
+.newComment {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

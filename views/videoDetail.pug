@@ -21,6 +21,22 @@ block content
             a(href=routes.userDetail(video.creator.id))=video.creator.name
         .video__comments
             if video.comments.length === 1 
-                span.video__comment-number 1 comment
+                span.video__comment-number#jsCommentNumber 1 
+                | comment
+            else if video.comments.length === 0 
+                span.video__comment-number#jsCommentNumber 0
+                | comment
             else 
-                span.video__comment-number #{video.comments.length} comments
+                span.video__comment-number#jsCommentNumber #{video.comments.length}
+                | comments
+            form.add__comment#jsAddComment
+                if loggedUser
+                     input(type="text", placeholder="Add a comment", name='comment')
+                else 
+                     input(type="text", placeholder="로그인 후 사용해 주세요.", disabled)
+            ul.video__comments-list#jsCommentList
+                each comment in video.comments.reverse()
+                    li
+                        span=comment.text
+                        if loggedUser && comment.creator.toString() === loggedUser.id
+                            input(type="button",value="X", name=comment.id).commentDeleteBtn#commentDeleteBtn
