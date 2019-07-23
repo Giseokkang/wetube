@@ -39,4 +39,4 @@ block content
                     li
                         span=comment.text
                         if loggedUser && comment.creator.toString() === loggedUser.id
-                            input(type="button",value="X", name=comment.id).commentDeleteBtn#commentDeleteBtn
+                            input(type="button",value="❌", name=comment.id).commentDeleteBtn#commentDeleteBtn

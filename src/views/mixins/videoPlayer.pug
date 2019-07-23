@@ -1,11 +1,11 @@
 mixin videoPlayer(video={})
     .videoPlayer#jsVideoPlayer
-        video(src=`/${video.src}`)
-        .videoPlayer__controls
+        video(src=video.src)
+        .videoPlayer__controls#jsVideoControls
             .videoPlayer__column
                 div#jsPlayBtn
                     i.fas.fa-play
-                input(type="range", min='0', max='1', step='0.1', value='0.5').volumeBar#jsvolumeBar
+                input(type="range", min='0', max='1', step='0.1').volumeBar.focused#jsvolumeBar
                 div#jsVolumeBtn.volumeBtn
                     i.fas.fa-volume-up
 

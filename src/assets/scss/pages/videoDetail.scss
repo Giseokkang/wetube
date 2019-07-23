@@ -79,6 +79,9 @@
       margin-top: 30px;
       li {
         padding: 20px 10px;
+        .commentDeleteBtn {
+          cursor: pointer;
+        }
       }
     }
   }
