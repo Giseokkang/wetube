@@ -20,6 +20,9 @@ export const search = async (req, res) => {
     videos = await Video.find({
       title: { $regex: searchingBy, $options: "i" }
     });
+    if (videos.length === 0) {
+      req.flash("error", "Video not found");
+    }
   } catch (error) {
     console.log(error);
   }
@@ -34,15 +37,22 @@ export const postUpload = async (req, res) => {
     body: { title, description },
     file: { location }
   } = req;
-  const newVideo = await Video.create({
-    fileUrl: location,
-    title,
-    description,
-    creator: req.user.id
-  });
-  req.user.videos.push(newVideo.id);
-  req.user.save();
-  res.redirect(routes.videoDetail(newVideo.id));
+  try {
+    const newVideo = await Video.create({
+      fileUrl: location,
+      title,
+      description,
+      creator: req.user.id
+    });
+    req.flash("success", "Complete Upload");
+    req.user.videos.push(newVideo.id);
+    req.user.save();
+    res.redirect(routes.videoDetail(newVideo.id));
+  } catch (error) {
+    console.log(error);
+    req.flash("error", "Failed Upload");
+    res.redirect(routes.upload);
+  }
 };
 
 export const videoDetail = async (req, res) => {

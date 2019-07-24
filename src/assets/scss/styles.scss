@@ -1,14 +1,18 @@
 @import "/config/_variables.scss";
 @import "./main.scss";
 @import "./reset.scss";
+@import "./home.scss";
+
 @import "./parials/header.scss";
 @import "./parials/footer.scss";
-@import "./pages/join.scss";
+
 @import "./parials/socialLogin.scss";
 @import "./parials/videoPlayer.scss";
 @import "./parials/videoBlock.scss";
 @import "./parials/videoRecoreder.scss";
-@import "./home.scss";
+@import "./parials/messages.scss";
+
+@import "./pages/join.scss";
 @import "./pages/upload.scss";
 @import "./pages/editVideo.scss";
 @import "./pages/userprofile.scss";

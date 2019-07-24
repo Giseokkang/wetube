@@ -36,7 +36,7 @@ export const getLogin = (req, res) =>
 export const postLogin = passport.authenticate("local", {
   failureRedirect: routes.login,
   successRedirect: routes.home,
-  successFlash: "Welcom",
+  successFlash: "Welcome",
   failureFlash: "Can't log in, Check email and/or password"
 });
 
