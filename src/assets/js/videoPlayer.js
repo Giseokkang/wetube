@@ -182,11 +182,7 @@ function init() {
   volumeBtn.addEventListener("click", handleVolumeClick);
   expandBtn.addEventListener("click", goFullScreen);
   expandBtn.addEventListener("click", exitFullScreen);
-  if (process.env.RPODUCTION) {
-    setTotalTime();
-  } else {
-    videoPlayer.addEventListener("loadedmetadata", setTotalTime);
-  }
+  videoPlayer.addEventListener("loadedmetadata", setTotalTime);
   videoPlayer.addEventListener("ended", handleEnded);
   volumeBar.addEventListener("input", handleDrag);
   window.addEventListener("keydown", handleKeyCode);

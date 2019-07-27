@@ -28,7 +28,7 @@ passport.use(
     {
       clientID: process.env.FACEBOOK_APP_ID,
       clientSecret: process.env.FACEBOOK_APP_SECRET,
-      callbackURL: `https://1c144ae2.ngrok.io${routes.facebookCallback}`,
+      callbackURL: `https://frozen-scrubland-99246.herokuapp.com${routes.facebookCallback}`,
       profileFields: ["id", "displayName", "photos", "email"],
       scope: ["public_profile", "email"]
     },
