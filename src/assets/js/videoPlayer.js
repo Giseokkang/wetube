@@ -120,22 +120,42 @@ const formatDate = seconds => {
   return `${hours}:${minutes}:${totalSeconds}`;
 };
 
+const formatDataHeroku = () => {
+  const i = setInterval(() => {
+    if (videoPlayer.readyState > 0) {
+      const minutes = parseInt(videoPlayer.duration / 60, 10);
+      const seconds = videoPlayer.duration % 60;
+
+      totalTime.innerHTML = `${minutes}:${seconds}`;
+
+      clearInterval(i);
+    }
+  }, 200);
+};
+
 function getCurrentTime() {
   currentTime.innerHTML = formatDate(Math.floor(videoPlayer.currentTime));
 }
 
 async function setTotalTime() {
   let totalTimeString;
-  if (videoPlayer.duration === Infinity) {
-    const blob = await fetch(videoPlayer.src).then(response => response.blob());
-    const blobDuration = await getBlobDuration(blob);
-    totalTimeString = formatDate(blobDuration);
+  if (process.env.PRODUCTION) {
+    formatDataHeroku();
+    setInterval(getCurrentTime, 1000);
   } else {
-    totalTimeString = formatDate(videoPlayer.duration);
-  }
-  totalTime.innerHTML = totalTimeString;
+    if (videoPlayer.duration === Infinity) {
+      const blob = await fetch(videoPlayer.src).then(response =>
+        response.blob()
+      );
+      const blobDuration = await getBlobDuration(blob);
+      totalTimeString = formatDate(blobDuration);
+    } else {
+      totalTimeString = formatDate(videoPlayer.duration);
+    }
+    totalTime.innerHTML = totalTimeString;
 
-  setInterval(getCurrentTime, 1000);
+    setInterval(getCurrentTime, 1000);
+  }
 }
 
 function handleEnded() {
