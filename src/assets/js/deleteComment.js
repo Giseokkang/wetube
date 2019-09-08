@@ -30,6 +30,5 @@ function init() {
 }
 
 if (deleteCommentBtn) {
-  console.log(deleteCommentBtn);
   init();
 }
